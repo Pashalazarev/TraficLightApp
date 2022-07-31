@@ -10,15 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var redLightView: UIView!
-    
     @IBOutlet var yellowLightView: UIView!
-    
     @IBOutlet var greenLightView: UIView!
-    
     @IBOutlet var starButton: UIButton!
-    
     @IBOutlet var nextButton: UIButton!
     
+    var counter = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +33,19 @@ class ViewController: UIViewController {
     
     @IBAction func startButtonPressed() {
         starButton.setTitle("Next", for: .normal)
-        
+        if counter == 1 {
+            redLightView.alpha = 1
+            greenLightView.alpha = 0.3
+            counter -= 0.5
+        } else if counter == 0.5{
+            redLightView.alpha = 0.3
+            yellowLightView.alpha = 1
+            counter -= 0.5
+        } else if counter == 0 {
+            yellowLightView.alpha = 0.3
+            greenLightView.alpha = 1
+            counter += 1
+        }
     }
     }
 
