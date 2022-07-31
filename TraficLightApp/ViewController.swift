@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var starButton: UIButton!
     @IBOutlet var nextButton: UIButton!
     
-    var counter = 1.0
+    private var counter = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
